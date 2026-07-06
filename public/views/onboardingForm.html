@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <link rel="stylesheet" href="../css/styles.css" type="text/css" />
+        <title>Meal Planning Onboarding</title>
+    </head>
+    <body>
+        <h1>Meal Planning Onboarding</h1>
+
+        <form action="onboardingFormResponse.php" method="post">
+            <p>
+                <label>Username:
+                    <input type ="text" name="username" placeholder="ex: Chef Maria">
+                 </label>
+            </p>
+
+            <p>
+                <label>How old are you?
+                    <select name="age">
+                        <option value="15-25">15-25</option>
+                        <option value="25-40">25-40</option>
+                        <option value="40-60">40-60</option>
+                        <option value="60+">60+</option>
+                        <option value="other">Other</option>
+                    </select>
+                </label>
+            </p>
+
+            <p>
+                <label>Place of Origin:
+                    <input type="text" name="origin" placeholder="ex: France">
+                </label>
+            </p>
+
+            <p>Prepared Meals:
+                <div class="options">
+                    <label>Breakfast
+                        <input type="checkbox" name="preparedmeals[]" value="Breakfast">
+                    </label>
+                    <label>Lunch
+                        <input type="checkbox" name="preparedmeals[]" value="Lunch">
+                    </label>
+                    <label>Dinner
+                        <input type="checkbox" name="preparedmeals[]" value="Dinner">
+                    </label>
+                </div>
+            </p>
+
+            <p>Meal plan type:
+                <div class="options">
+                    <label>Weight Loss
+                        <input type="radio" name="mealplantype" value="Weight Loss">
+                    </label>
+                    <label>Healthy Eating
+                        <input type="radio" name="mealplantype" value="Healthy Eating">
+                    </label>
+                    <label>Family Meals
+                        <input type="radio" name="mealplantype" value="Family Meals">
+                    </label>
+                </div>
+            </p>
+
+            <p>Dietary Needs:
+                <div class="options">
+                    <label>Vegeterian
+                       <input type="checkbox" name="dietaryrestrictions[]" value="Vegeterian">
+                    </label>
+                    <label>Gluten Free
+                        <input type="checkbox" name="dietaryrestrictions[]" value="Gluten Free">
+                    </label>
+                    <label>Sugar Free
+                        <input type="checkbox" name="dietaryrestrictions[]" value="Sugar Free">
+                    </label>
+                    <label>Lactose Intolerant
+                        <input type="checkbox" name="dietaryrestrictions[]" value="Lactose Intolerant">
+                    </label>
+                    <label>Nut Free
+                        <input type="checkbox" name="dietaryrestrictions[]" value="Nut Free">
+                    </label>
+                </div>
+            </p>
+
+            <p>
+                <label>Tell us about yourself:
+                    <textarea name="aboutyourself" rows="5" cols="40"></textarea>
+                 </label>
+            </p>
+
+            <p>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Clear">
+            </p>
+
+
+
+        </form>
+    </body>
+</html>
