@@ -1,20 +1,25 @@
 <?php
-session_start();
+require_once '../../server/database.php';
 
-$validUsernames = ["miriam", "bracha", "professor gutherc"];
-$validPasswords = ["1234", "wordpass", "5678"];
+session_start();
 
 $username = $_POST["username"];
 $password = $_POST["password"];
 
-$loggedIn = false;
+$conn = getConnection();
 
-for ($i=0; $i < count($validUsernames); $i++){
-    if ($username == $validUsernames[$i] && $password == $validPasswords[$i]){
+if ($conn) {
+    $sql = "SELECT * FROM authorized_users WHERE password = '$password' AND username = '$username';";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
         $loggedIn = true;
-        break;
+    } else {
+        $loggedIn = false;
     }
 }
+//created rows in db for these values
+//$validUsernames = ["miriam", "bracha", "professor gutherc"];
+//$validPasswords = ["1234", "wordpass", "5678"];
 
 if ($loggedIn) {
     $_SESSION["loggedIn"] = true;
