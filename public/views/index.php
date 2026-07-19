@@ -14,6 +14,7 @@ Whether you are planning meals for your family, looking for recipes that fit you
 Explore our website to create personalized meal plans, discover delicious recipes, manage your pantry, and keep track of your grocery shopping with ease.
 </p>
 
+<?php include "slides.php"; ?>
 
 <?php include "footer.php"; ?>
 

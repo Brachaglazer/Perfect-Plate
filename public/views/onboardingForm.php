@@ -1,3 +1,31 @@
+<?php
+    require_once '../../server/database.php';
+    $conn = getConnection();
+
+if ($conn) {
+    $mealSql = "SELECT type FROM meal_types;";
+    $mealResult = $conn->query($mealSql);
+    $mealtypes = ["Weight Loss", "Healthy Eating", "Family Meals"];
+    if ($mealResult->num_rows > 0) {
+        $mealtypes = $mealResult;
+    }
+
+    $dietSql = "SELECT need FROM dietary_needs;";
+    $dietResult = $conn->query($dietSql);
+    $dietary = ["Gluten Free", "Lactose Intolerant", "Sugar Free", "Nut Free", "Vegetarian", "None/Other"];
+    if ($dietResult->num_rows > 0) {
+        $dietary = $dietResult;
+    }
+
+    /*$ingrSql = "SELECT name FROM ingredients;";
+    $ingrResult = $conn->query($ingrSql);
+    $ingredients = ["Flour", "Sugar", "Eggs", "Oil", "Salt"];
+    if ($ingrResult->num_rows > 0) {
+        $ingredients = $ingrResult;
+    }*/
+
+}
+?>
 <!DOCTYPE html>
 <html lang ="en">
     <head>
@@ -45,38 +73,27 @@
                     </label>
                 </div>
             </p>
-
             <p>Meal plan type:
                 <div class="options">
-                    <label>Weight Loss
-                        <input type="radio" name="mealplantype" value="Weight Loss">
-                    </label>
-                    <label>Healthy Eating
-                        <input type="radio" name="mealplantype" value="Healthy Eating">
-                    </label>
-                    <label>Family Meals
-                        <input type="radio" name="mealplantype" value="Family Meals">
-                    </label>
+                    <?php
+                        for ($i=0; $i < count($mealtypes); $i++){
+                            echo "<label>$mealtypes[$i]";
+                            echo    "<input type='radio' name='mealplantype' value='$mealtypes[$i]'>";
+                            echo "</label>";
+                        }
+                    ?>
                 </div>
             </p>
 
             <p>Dietary Needs:
                 <div class="options">
-                    <label>Vegeterian
-                       <input type="checkbox" name="dietaryrestrictions[]" value="Vegeterian">
-                    </label>
-                    <label>Gluten Free
-                        <input type="checkbox" name="dietaryrestrictions[]" value="Gluten Free">
-                    </label>
-                    <label>Sugar Free
-                        <input type="checkbox" name="dietaryrestrictions[]" value="Sugar Free">
-                    </label>
-                    <label>Lactose Intolerant
-                        <input type="checkbox" name="dietaryrestrictions[]" value="Lactose Intolerant">
-                    </label>
-                    <label>Nut Free
-                        <input type="checkbox" name="dietaryrestrictions[]" value="Nut Free">
-                    </label>
+                    <?php
+                        for ($i=0; $i < count($dietary); $i++){
+                            echo "<label>$dietary[$i]";
+                            echo    "<input type='checkbox' name='dietaryrestrictions[]' value='$dietary[$i]'>";
+                            echo "</label>";
+                        }
+                    ?>
                 </div>
             </p>
 

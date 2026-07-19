@@ -14,6 +14,8 @@ body {
     width: 170px;
     display: block;
     margin: 25px auto 15px auto;
+    border: 2px solid #A4AF7F;
+    border-radius: 25px;
 }
 
 /* Navigation Bar */
@@ -206,3 +208,38 @@ legend {
 .options input[type="radio"] {
     margin: 0;
 }
+
+/* JQuery Slides */
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 70%;
+  padding: 0;
+  margin: auto;
+  border: 5px solid #A4AF7F;
+  border-radius: 25px;
+  }
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+  }

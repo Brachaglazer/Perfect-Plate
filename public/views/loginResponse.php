@@ -43,7 +43,7 @@ if ($loggedIn) {
     <?php
        if ($loggedIn){
         echo "<p>Login successful!</p>";
-        echo "<p><a href='content.php'>Go to content page</a></p>";
+        echo "<p><a href='index.php'>Go to home page</a></p>";
        } else {
         echo "<p>Login unsuccessful!</p>";
         echo "<p><a href='login.html'>Back to login page</a></p>";
