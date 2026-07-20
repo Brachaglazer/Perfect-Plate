@@ -15,6 +15,17 @@ Explore our website to create personalized meal plans, discover delicious recipe
 </p>
 
 <?php include "slides.php"; ?>
+<script>
+$(function() {
+    $(".rslides").responsiveSlides({
+        auto: true,            
+        speed: 500,            
+        timeout: 4000,          
+        pager: false,          
+        nav: false, 
+    });
+});
+</script>
 
 <?php include "footer.php"; ?>
 
