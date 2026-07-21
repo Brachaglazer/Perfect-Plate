@@ -243,3 +243,40 @@ legend {
   width: 100%;
   border: 0;
   }
+
+ul.slimmenu {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #61744B;
+    text-align: center;
+}
+
+ul.slimmenu li {
+    background-color: #61744B;
+    border: none;
+}
+
+ul.slimmenu li a {
+    color: white;
+    padding: 16px 22px;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ul.slimmenu li a:hover {
+    background-color: #253F23;
+    color: white;
+}
+
+.menu-collapser {
+    background-color: #61744B;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.collapse-button {
+    background-color: #253F23;
+}
